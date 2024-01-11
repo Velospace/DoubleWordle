@@ -62,7 +62,7 @@ public class Main {
                 System.out.println("Word 1 progress: [" + word1 + "!]\nWord 2 progress: " + guess2);
             } else if (userinput.equals(word2) || guess2.equals(word2)) {
                 System.out.println("Word 1 progress: " + guess1 + "\nWord 2 progress: [" + guess2 + "!]");
-            } else if ((tries == 0) && (!guess1.equals(word1)) && (!guess2.equals(word2))) {
+            } else if ((tries == 0) && (!guess1.equals(word1)) || (!guess2.equals(word2))) {
                 System.out.println("Dang, you ran out of attempts! The words were " + word1 + " and " + word2 +"!");
                 break;
             } else System.out.println("Word 1 progress: " + guess1 + "\nWord 2 progress: " + guess2);
