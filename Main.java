@@ -13,7 +13,7 @@ public class Main {
         String word2 = words[utility.randomNum(0,words.length)];
         String guess1 = "_____", guess2 = "_____"; while (word2.equals(word1)) { word2 = words[utility.randomNum(0,words.length)]; }
         int wordlength = 5; // will be able to choose later
-        int tries = (wordlength) * 2;
+        int tries = 15;
         int attempts = 0;
 
         // Introduction to the gam
@@ -40,7 +40,7 @@ public class Main {
             attempts++; tries --;
 
             String userinput = scanner.next().toUpperCase();
-            if (userinput.length() < 5 || userinput.matches(".*\\d.*")) { System.out.println("Please enter a valid response, you have not lost a turn."); continue; }
+            if (userinput.length() > 5 || userinput.matches(".*\\d.*")) { System.out.println("Please enter a valid response, you have not lost a turn."); continue; }
 
             guess1 = utility.match(guess1, utility.construct(userinput, word1, guess1));
             guess2 = utility.match(guess2, utility.construct(userinput, word2, guess2));
@@ -49,11 +49,11 @@ public class Main {
 
 
             //Debugging code I used below
-            System.out.println("Guess1: " + guess1 + "\nWord1: " + word1 + "\nGuess2: " + guess2 + "\nWord2: "+word2 + "\nChars1");
-            for (char i : misplaced1) { System.out.print(i);}
-            System.out.print("\nChars2");
-            for (char i : misplaced2) { System.out.print(i);}
-            System.out.print("\n\n\n");
+            //System.out.println("Guess1: " + guess1 + "\nWord1: " + word1 + "\nGuess2: " + guess2 + "\nWord2: "+word2 + "\nChars1");
+            //for (char i : misplaced1) { System.out.print(i);}
+            //System.out.print("\nChars2");
+            //for (char i : misplaced2) { System.out.print(i);}
+            //System.out.print("\n\n\n");
 
 
             if (guess1.equals(word1) && guess2.equals(word2)) {
