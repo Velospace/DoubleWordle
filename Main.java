@@ -37,11 +37,10 @@ public class Main {
         // Game implementation
         while (tries > 0) {
             System.out.println("~===================~ " + tries + " Tries Left ~===================~\nEnter a 5 letter word as your guess...\n");
-            attempts++; tries --;
 
             String userinput = scanner.next().toUpperCase();
             if (userinput.length() > 5 || userinput.matches(".*\\d.*")) { System.out.println("Please enter a valid response, you have not lost a turn."); continue; }
-
+            attempts++; tries --;
             guess1 = utility.match(guess1, utility.construct(userinput, word1, guess1));
             guess2 = utility.match(guess2, utility.construct(userinput, word2, guess2));
             char[] misplaced1 = utility.getMisplaced(userinput, word1, guess1);
