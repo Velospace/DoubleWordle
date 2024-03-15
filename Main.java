@@ -1,11 +1,15 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         // Objects
         Words library = new Words();
         Functions utility = new Functions();
         Scanner scanner = new Scanner(System.in);
+        utility.deepPrint(library.getWords());
+        utility.deepPrint(library.getWords(10));
+        /*
 
         // Variables
         String[] words = library.getWords();
@@ -80,5 +84,6 @@ public class Main {
                 System.out.println("None of the letters in the guess are correct for either word.");
             }
         }
+         */
     }
 }
