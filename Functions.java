@@ -3,6 +3,15 @@ import java.util.ArrayList;
 public class Functions {
     Random random = new Random();
 
+    public void deepPrint(String[] table) {
+        String toReturn = "";
+
+        for(String s: table) {
+            toReturn += (s + "|");
+        }
+
+        System.out.println(toReturn);
+    }
     public String match(String old, String current) {
         char[] characters = old.toCharArray();
 
